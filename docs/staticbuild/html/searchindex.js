@@ -1,0 +1,1 @@
+Search.setIndex({envversion:46,filenames:["index"],objects:{},objnames:{},objtypes:{},terms:{"M\u00f3dul":0,"P\u00e1gin":0,"\u00cdndic":0,Contents:0,Pesquis:0},titles:["Welcome to Piramid&#8217;s documentation!"],titleterms:{Indic:0,Piramid:0,Welcom:0,and:0,documentation:0,tabl:0}})
