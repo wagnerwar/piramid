@@ -7,13 +7,14 @@ Documentação da aplicação de teste: pyramid!
 ===================================
 
 Estrutura de arquivos e diretórios
-                *__init__.py* -- Configuração inicial
-		| *models.py* -- Camada de acesso á dados
-		| *scripts* -- Onde se localizam os scripts de atualização ou manutenção da aplicação
-		| *static*-- Onde ficam os arquivos estáticos
-		| *templates* -- Arquivos de visualização
-		| *tests.py* -- Testes automatizados
-		| *views.py* -- Camada de negócio da aplicação
+| *__init__.py* -- Configuração inicial
+| *models.py* -- Camada de acesso á dados
+| *scripts* -- Onde se localizam os scripts de atualização ou manutenção da aplicação
+| *static*-- Onde ficam os arquivos estáticos
+| *templates* -- Arquivos de visualização
+| *tests.py* -- Testes automatizados
+| *views.py* -- Camada de negócio da aplicação
+
 Instalação
 
 Modelo de dados
