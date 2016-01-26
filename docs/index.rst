@@ -6,17 +6,8 @@
 Documentando via readthedocs!
 ===================================
 
-Contents:
+Primeiro parágrafo
 
-.. toctree::
-   :maxdepth: 2
+Segundo parágrafo
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
