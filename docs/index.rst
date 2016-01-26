@@ -3,11 +3,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentando via readthedocs!
+Documentação da aplicação de teste: pyramid!
 ===================================
 
-Primeiro parágrafo
+Estrutura de arquivos e diretórios
+                *__init__.py* -- Configuração inicial
+		*models.py* -- Camada de acesso á dados
+		*scripts* -- Onde se localizam os scripts de atualização ou manutenção da aplicação
+		*static*-- Onde ficam os arquivos estáticos
+		*templates* -- Arquivos de visualização
+		*tests.py* -- Testes automatizados
+		*views.py* -- Camada de negócio da aplicação
+Instalação
 
-Segundo parágrafo
+Modelo de dados
+
+Cadastro
+
+Consulta
+
+Edição
+
+Exclusão
+
+Referências
+
 
 
