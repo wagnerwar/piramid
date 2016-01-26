@@ -22,4 +22,6 @@ tutorial/static/pyramid.png
 tutorial/static/theme.css
 tutorial/static/theme.min.css
 tutorial/templates/cad.pt
+tutorial/templates/consulta.pt
+tutorial/templates/edicao.pt
 tutorial/templates/mytemplate.pt

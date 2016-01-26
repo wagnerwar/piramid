@@ -1,13 +1,22 @@
-tutorial README
-==================
+		Instalação (No diretório do ambiente virtual)
+			yum install sqlite-devel git
 
-Getting Started
----------------
+			virtualenv egito
+   
+                        cd egito
 
-- cd <directory containing this file>
+			pip install "pyramid==1.6"
 
-- $VENV/bin/python setup.py develop
+			bin/pcreate -s alchemy  tutorial
 
-- $VENV/bin/initialize_tutorial_db development.ini
+			rm -rf tutorial/*
+			
+			git clone https://github.com/wagnerwar/piramid.git tutorial
+			
+			cd tutorial/
+			
+			python setup.py develop
+			
+			cd ../
 
-- $VENV/bin/pserve development.ini
+			bin/initialize_tutorial_db tutorial/development.ini
