@@ -29,5 +29,9 @@ Exclusão
 
 Referências
 
+.. |br| raw:: html
 
+   <br />
+
+I want to break this line here: |br| this is after the break.
 
