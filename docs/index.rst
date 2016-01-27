@@ -372,7 +372,11 @@ serving on http://0.0.0.0:6543
 A saída acima indica que a aplicação está acessível na porta 6543. Mas, porta de onde? Da máquina que está hospedando esta aplicação. Caso seja sua máquina local, então, para testar, é só digitar na sua barra de endereço: http://localhost:5432/videos/. 
 
  
+====================
+Lidando com templates
+====================
 
+O framework Pyramid utiliza as seguintes linguagens para template: TAL, METAL, etc. Estas linguagens podem ser usadas em conjunto. No nosso exemplo, é usada apenas a linguagem TAL, para acessar o valor de algumas variáveis e  realizar iterações em algumas listagens. Linguagem de template é a linguagem utilizada para programar em arquivos estáticos (em formato HTML), por exemplo.  
 
 ===========
 Referências
@@ -381,3 +385,5 @@ Referências
 https://media.readthedocs.org/pdf/sqlalchemy/rel_1_0/sqlalchemy.pdf
 
 http://docs.pylonsproject.org/en/latest/
+
+https://www.owlfish.com/software/simpleTAL/tal-guide.html
