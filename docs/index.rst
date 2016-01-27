@@ -194,6 +194,7 @@ Conforme código acima, eu busco todos os registros da tabela video, para exibi-
 
 
 Arquivo de template: 'templates/consulta.pt' (Trecho relevante)
+
 .. code-block:: html
     :linenos:
 
