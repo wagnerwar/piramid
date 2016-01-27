@@ -78,7 +78,7 @@ Arquivo models.py
     Index('my_index', Video.name, unique=True, mysql_length=255)
 
 
-vi scripts/initializedb.py
+Arquivo scripts/initializedb.py
 
 .. code-block:: python
     :linenos:
@@ -96,6 +96,9 @@ vi scripts/initializedb.py
             with transaction.manager:
                 model = Video(name='one', preco=1)
                 DBSession.add(model)
+
+
+Se atente para as duas linhas acima, no qual é feita a inserção de um registro para fins de teste.
 
 				
 Sincronização e criação das tabelas
