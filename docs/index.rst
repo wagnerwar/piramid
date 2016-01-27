@@ -64,7 +64,10 @@ Modelo de dados
 ==============
 
 Arquivo models.py
+
 .. code-block:: python
+    :linenos:
+
     class Video(Base):
         __tablename__ = 'video'
         id = Column(Integer, primary_key=True)
