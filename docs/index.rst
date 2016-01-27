@@ -344,6 +344,13 @@ Se existir algum parâmetro 'id' na requisição, o video referenciado é exclui
 o sistema exibe a seguinte mensagem: 'ID INVALIDO'. Se não existir nenhum parâmetro 'id', então, é exibido a seguinte mensagem: "KD O ID?".
 
 
+===================
+Rodando a aplicação
+===================
+
+Para rodar a aplicação, você deve acessar o diretório-raíz de seu ambiente virtual (No nosso exemplo, dentro da pasta egito). Aí, considerando que você também está usando o Centos 7, execute o seguinte comando: 
+
+bin/pserve tutorial/development.ini
 
 ===========
 Referências
