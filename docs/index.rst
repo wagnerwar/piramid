@@ -155,6 +155,7 @@ Arquivo views.py
 Conforme visto acima, a view denominada 'cadastrar' renderiza o template 'templates/cad.pt'. A função cadastrar trata das requisições e respostas desta URI (Entende-se como caminho de uma URL, por exemplo: http://localhost/videos/cadastrar ) 
 Observe que, se existem parâmetros na requisição, o sistema tenta cadastrar um video novo. Se não há parâmetros, simplesmente exibe o formulário para inclusão de um novo vídeo.
 
+Observe que, em cada view, o 'return' sempre retorna as variáveis que vão para o template. Por exemplo, na função cadastrar() definimos que 'save_url' será equivalente ao valor da variável local save_url ( return {'save_url': save_url}). Por isso, tal valor é acessível no template abaixo( <form action="${save_url}" method="GET"> )
 
 
 Arquivo de template: templates/cad.pt (Trecho relevante )
