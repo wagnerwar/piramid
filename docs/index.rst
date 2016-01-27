@@ -93,6 +93,7 @@ Arquivo __init__.py
 
 .. code-block:: python
     :linenos:
+
     def main(global_config, **settings):
         config.include(videos_include, route_prefix='/videos')
 					
@@ -107,6 +108,7 @@ Arquivo views.py
 
 .. code-block:: python
     :linenos:
+
     @view_config(route_name='cadastrar',renderer='templates/cad.pt')
     def cadastrar(request):
         save_url = request.route_url('cadastrar')
@@ -135,6 +137,7 @@ Arquivo de template: templates/cad.pt (Trecho relevante )
 
 .. code-block:: html
     :linenos:
+
     <div class="content">
     <h1><span class="font-semi-bold">Cadastro de vídeos</span></h1>
     <form action="${save_url}" method="GET">
