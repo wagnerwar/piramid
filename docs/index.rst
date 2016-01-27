@@ -164,7 +164,55 @@ URL: http://192.168.56.101:6543/videos/cadastrar
 
 ========
 Consulta
-=======
+========
+
+Arquivo __init__.py
+
+.. code-block:: python
+    :linenos:
+
+    def videos_include(config):
+        config.add_route('consulta', '/')
+
+
+Agora, no trecho acima, foi configurada nova rota. Ou seja, quando digitarmos na barra de endereço "videos/", seremos redirecionados para a view 'consulta'. A configuração desta view segue abaixo:
+
+
+Arquivo views.py
+
+.. code-block:: python
+    :linenos:
+
+    @view_config(route_name='consulta',renderer='templates/consulta.pt')
+        def consulta(request):
+            videos = DBSession.query(Video).all()
+            url_edit = request.route_url('edicao')
+            url_cad = request.route_url('cadastrar')
+            return {'videos': videos,'url_edit': url_edit,'url_cad': url_cad}
+
+Conforme código acima, eu busco todos os registros da tabela video, para exibi-los numa listagem.	
+
+
+Arquivo de template: 'templates/consulta.pt' (Trecho relevante)
+.. code-block:: html
+    :linenos:
+
+    <div class="content">
+               <h1>Listagem de vídeos</h1>
+                <a tal:attributes="href string:${url_cad}"><button>CADASTRAR</button></a>
+              <div tal:repeat="item videos">
+                <div class="vido">
+                <a tal:attributes="href string:${url_edit}?&id=${item.id} "><strong>Nome: </strong><span tal:content="string:${item.name}" /></a><br />
+                <strong>Descricao: </strong><span tal:content="string:${item.descricao}" /><br />
+                <strong>Preco: </strong><span tal:content="string:${item.preco}" /><br />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+Acima, a listagem de vídeos.
+
 
 ======
 Edição
