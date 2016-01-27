@@ -89,6 +89,76 @@ Foi criado um índice chamada my_index associado com a tabela video.
 Cadastro
 ========
 
+Arquivo __init__.py
+
+.. code-block:: python
+    :linenos:
+    def main(global_config, **settings):
+        config.include(videos_include, route_prefix='/videos')
+					
+    def videos_include(config):
+        config.add_route('cadastrar', '/cadastrar')
+
+Conforme visto acima, estão configuradas todos os caminhos iniciados com 'videos/' dentro da função videos_include.
+Por exemplo, quando digitamos 'videos/cadastrar', será carregada a view cadastrar, cujo conteúdo segue abaixo, no arquivo views.py.
+
+
+Arquivo views.py
+
+.. code-block:: python
+    :linenos:
+    @view_config(route_name='cadastrar',renderer='templates/cad.pt')
+    def cadastrar(request):
+        save_url = request.route_url('cadastrar')
+        request.route_url('consulta')
+        if  request.params:
+            print('PASSOU')
+            nome = request.params['nome']
+            descricao = request.params['descricao']
+            preco = request.params['preco']
+            novo_video = Video(name=nome,descricao=descricao,preco=preco)
+            try:
+                DBSession.add(novo_video)
+                return HTTPFound(location=request.route_url('consulta'))
+            except DBAPIError:
+            return Response("ERRO DB")
+        else:
+            print('NAO PASSOU')
+            return {'save_url': save_url,'project': 'tutorial'}
+
+Conforme visto acima, a view denominada 'cadastrar' renderiza o template 'templates/cad.pt'. A função cadastrar trata das requisições e respostas desta URI (Entende-se como caminho de uma URL, por exemplo: http://localhost/videos/cadastrar ) 
+Observe que, se existem parâmetros na requisição, o sistema tenta cadastrar um video novo. Se não há parâmetros, simplesmente exibe o formulário para inclusão de um novo vídeo.
+
+
+
+Arquivo de template: templates/cad.pt (Trecho relevante )
+
+.. code-block:: html
+    :linenos:
+    <div class="content">
+    <h1><span class="font-semi-bold">Cadastro de vídeos</span></h1>
+    <form action="${save_url}" method="GET">
+    <label>Nome:<br>
+    <input type="text" name="nome" value="" /><br>
+    </label>
+    <label>Descricao:<br>
+    <input type="text" name="descricao" value="" /><br>
+    </label>
+    <label>Preco:<br>
+    <input type="text" name="preco" value="" /><br>
+    </label>
+    <label>
+    <input type="submit" value="Cadastrar" style="margin-top: 1.2em;">
+    </label>
+    </form>
+    </div>
+
+No meio de um grande código HTML, entre tags HTML e BODY, depois da tag HEAD, segue acima o que realmente nos interessa.
+			
+URL: http://192.168.56.101:6543/videos/cadastrar
+
+
+
 ========
 Consulta
 =======
