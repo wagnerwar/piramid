@@ -63,7 +63,8 @@ Tal configuração é para ser feito no terminal de uma máquina linux. A máqui
 Modelo de dados
 ==============
 
-Arquivo models.py::
+Arquivo models.py
+.. code-block:: python
     class Video(Base):
         __tablename__ = 'video'
         id = Column(Integer, primary_key=True)
