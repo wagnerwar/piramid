@@ -61,7 +61,7 @@ Tal configuração é para ser feito no terminal de uma máquina linux. A máqui
 
 ===============
 Modelo de dados
-==============
+===============
 
 Arquivo models.py
 
