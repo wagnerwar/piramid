@@ -376,7 +376,7 @@ A saída acima indica que a aplicação está acessível na porta 6543. Mas, por
 Lidando com templates
 ====================
 
-O framework Pyramid utiliza as seguintes linguagens para template: TAL, METAL, etc. Estas linguagens podem ser usadas em conjunto. No nosso exemplo, é usada apenas a linguagem TAL, para acessar o valor de algumas variáveis e  realizar iterações em algumas listagens. Linguagem de template é a linguagem utilizada para programar em arquivos estáticos (em formato HTML), por exemplo.  
+O framework Pyramid utiliza as seguintes linguagens para template: TAL, METAL e Mako. Estas linguagens podem ser usadas em conjunto. No nosso exemplo, é usada apenas a linguagem TAL, para acessar o valor de algumas variáveis e  realizar iterações em algumas listagens. Linguagem de template é a linguagem utilizada para programar em arquivos estáticos (em formato HTML), por exemplo.  
 
 ===========
 Referências
