@@ -42,21 +42,25 @@ Tal configuração é para ser feito no terminal de uma máquina linux. A máqui
 
 2. virtualenv egito
 
-3. pip install "pyramid==1.6"
+3.   cd egito
 
-4. bin/pcreate -s alchemy  tutorial
+4. bin/activate
 
-5. rm -rf tutorial/*
+5. pip install "pyramid==1.6"
 
-6. git clone https://github.com/wagnerwar/piramid.git tutorial
+6. bin/pcreate -s alchemy  tutorial
 
-7. cd tutorial/
+7. rm -rf tutorial/*
 
-8. python setup.py develop
+8. git clone https://github.com/wagnerwar/piramid.git tutorial
 
-9. cd ../
+9. cd tutorial/
 
-10. bin/initialize_tutorial_db tutorial/development.ini
+10. python setup.py develop
+
+11. cd ../
+
+12. bin/initialize_tutorial_db tutorial/development.ini
 
 
 ===============
@@ -351,6 +355,16 @@ Rodando a aplicação
 Para rodar a aplicação, você deve acessar o diretório-raíz de seu ambiente virtual (No nosso exemplo, dentro da pasta egito). Aí, considerando que você também está usando o Centos 7, execute o seguinte comando: 
 
 bin/pserve tutorial/development.ini
+
+Aparecerá uma saída semelhante á esta:
+
+Starting server in PID 11533.
+serving on http://0.0.0.0:6543
+
+A saída acima indica que a aplicação está acessível na porta 6543. Mas, porta de onde? Da máquina que está hospedando esta aplicação. Caso seja sua máquina local, então, para testar, é só digitar na sua barra de endereço: http://localhost:5432/videos/. 
+
+ 
+
 
 ===========
 Referências
