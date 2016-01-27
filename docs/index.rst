@@ -76,6 +76,27 @@ Arquivo models.py
         preco = Column(Float)
 
     Index('my_index', Video.name, unique=True, mysql_length=255)
+
+
+vi scripts/initializedb.py
+
+.. code-block:: python
+    :linenos:
+
+    def main(argv=sys.argv):
+        if len(argv) < 2:
+            usage(argv)
+            config_uri = argv[1]
+            options = parse_vars(argv[2:])
+            setup_logging(config_uri)
+            settings = get_appsettings(config_uri, options=options)
+            engine = engine_from_config(settings, 'sqlalchemy.')
+            DBSession.configure(bind=engine)
+            Base.metadata.create_all(engine)
+            with transaction.manager:
+                model = Video(name='one', preco=1)
+                DBSession.add(model)
+
 				
 Sincronização e criação das tabelas
     bin/initialize_tutorial_db tutorial/development.ini -- Onde tutorial/development.ini é o arquivo de configuração
