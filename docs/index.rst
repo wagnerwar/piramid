@@ -10,9 +10,31 @@ Documentação da aplicação de teste: pyramid!
 Estrutura de arquivos e diretórios
 ==================================
 
-I want to break this line here: |br| this is after the break.
 
  *__init__.py* -- Configuração inicial. 
+
+Tal configuração é para ser feito no terminal de uma máquina linux. A máquina em uso é Centos versão 7. Caso utilize outro tipo de sistema operacional, é necessário rever a síntaxe adotada.
+
+1. yum install sqlite-devel git
+
+2. virtualenv egito
+
+3. pip install "pyramid==1.6"
+
+4. bin/pcreate -s alchemy  tutorial
+
+5. rm -rf tutorial/*
+			
+6. git clone https://github.com/wagnerwar/piramid.git tutorial
+			
+7. cd tutorial/
+			
+8. python setup.py develop
+			
+9. cd ../
+
+10. bin/initialize_tutorial_db tutorial/development.ini
+
 
  
  *models.py* -- Camada de acesso á dados. 
@@ -31,18 +53,31 @@ I want to break this line here: |br| this is after the break.
 
  *views.py* -- Camada de negócio da aplicação.
 
+=========
 Instalação
+=========
 
+===============
 Modelo de dados
+==============
 
+========
 Cadastro
+========
 
+========
 Consulta
+=======
 
+======
 Edição
+======
 
+========
 Exclusão
+========
 
+===========
 Referências
-
+===========
 
