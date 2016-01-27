@@ -219,11 +219,111 @@ Acima, a listagem de vídeos.
 Edição
 ======
 
+Arquivo __init__.py
+
+.. code-block:: python
+    :linenos:
+
+    def videos_include(config):
+        config.add_route('edicao', '/editar')
+
+Segue acima, a configuração da rota 'videos/editar'.
+
+
+Arquivo views.py
+
+.. code-block:: python
+    :linenos:
+
+    @view_config(route_name='edicao',renderer='templates/edicao.pt')
+        def editar(request):
+            save_url = request.route_url('edicao')
+            dell = request.route_url('exclusao')
+            id = request.params['id']
+            video = DBSession.query(Video).filter_by(id=id).one()
+            if 'nome' in request.params.keys():
+                try:
+                    print("PASSOU")
+                    nome = request.params['nome']
+                    descricao=request.params['descricao']
+                    preco=request.params['preco']
+                    dados = DBSession.query(Video).filter_by(id=id).update({'name': nome,'descricao': descricao,'preco': preco})
+                    return HTTPFound(location=request.route_url('consulta'))
+                except Exception:
+                    return Response('ERRO DB')
+                else:
+                    print("nao passou")
+                    return {'save_url': save_url,'video': video,'dell': dell}
+
+Nesta view, verifica se existem parâmetros que identifiquem que a requisição se refere á submissão de um formulário. Se sim, é feita a atualização do video em questão, identificado pelo atributo 'id'. Se não, é carregado um formulário com os campos para edição do registro. 
+
+
+Arquivo de template: 'templates/edicao.pt' (Trecho relevante)
+
+.. code-block:: html
+    :linenos:
+    
+    <div class="content">
+    <h1><span class="font-semi-bold">EDICAO</span> <span class="smaller">Videos</span></h1>
+    <form action="${save_url}" method="GET">
+    <label>Nome:<br>
+    <input type="text" name="nome" value="${video.name}" /><br></label>
+    <label>Descricao:<br>
+    <input type="text" name="descricao" value="${video.descricao}" /><br>
+    </label><label>Preco:<br>
+    <input type="text" name="preco" value="${video.preco}" /><br>
+    </label>
+    <label>
+    <input tal:attributes="type string:hidden; name string:id; value string:${video.id}">
+    <input type="submit" value="Editar" style="margin-top: 1.2em;">
+    <a tal:attributes="href string:${dell}?id=${video.id}"><input type="button" value="Excluir" style="margin-top: 1.2em;"></a>
+    </label>
+    </form>
+    </div>
+
+Segue acima, exibição dos campos do video, para atualização.
+
+
 ========
 Exclusão
 ========
+
+Arquivo __init__.py
+
+.. code-block:: python
+    :linenos:
+
+    def videos_include(config):
+        config.add_route('exclusao', '/excluir')
+
+Configuração de rota para 'videos/excluir'
+
+Arquivo views.py
+
+.. code-block:: python
+    :linenos:
+    
+    @view_config(route_name='exclusao')
+        def excluir(request):
+        if request.params:
+            try:
+                id=request.params['id']
+                DBSession.delete(DBSession.query(Video).filter_by(id=id).first())
+                return HTTPFound(location=request.route_url('consulta'))
+                except Exception:
+                    return Response("ID INVALIDO")
+        else:
+            return Response("KD O ID?")
+
+Se existir algum parâmetro 'id' na requisição, o video referenciado é excluido. Se não existir vídeo identificado pelo 'id', então, 
+o sistema exibe a seguinte mensagem: 'ID INVALIDO'. Se não existir nenhum parâmetro 'id', então, é exibido a seguinte mensagem: "KD O ID?".
+
+
 
 ===========
 Referências
 ===========
 
+https://media.readthedocs.org/pdf/sqlalchemy/rel_1_0/sqlalchemy.pdf
+
+http://docs.pylonsproject.org/en/latest/
