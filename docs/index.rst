@@ -198,17 +198,17 @@ Arquivo de template: 'templates/consulta.pt' (Trecho relevante)
     :linenos:
 
     <div class="content">
-               <h1>Listagem de vídeos</h1>
-                <a tal:attributes="href string:${url_cad}"><button>CADASTRAR</button></a>
-              <div tal:repeat="item videos">
-                <div class="vido">
-                <a tal:attributes="href string:${url_edit}?&id=${item.id} "><strong>Nome: </strong><span tal:content="string:${item.name}" /></a><br />
-                <strong>Descricao: </strong><span tal:content="string:${item.descricao}" /><br />
-                <strong>Preco: </strong><span tal:content="string:${item.preco}" /><br />
-                </div>
-              </div>
-            </div>
-          </div>
+    <h1>Listagem de vídeos</h1>
+    <a tal:attributes="href string:${url_cad}"><button>CADASTRAR</button></a>
+    <div tal:repeat="item videos">
+    <div class="vido">
+    <a tal:attributes="href string:${url_edit}?&id=${item.id} "><strong>Nome: </strong><span tal:content="string:${item.name}" /></a><br />
+    <strong>Descricao: </strong><span tal:content="string:${item.descricao}" /><br />
+    <strong>Preco: </strong><span tal:content="string:${item.preco}" /><br />
+    </div>
+    </div>
+    </div>
+    </div>
 
 
 Acima, a listagem de vídeos.
