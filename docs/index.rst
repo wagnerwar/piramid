@@ -6,14 +6,30 @@
 Documentação da aplicação de teste: pyramid!
 ===================================
 
+==================================
 Estrutura de arquivos e diretórios
-.. |br| raw:: html
-
-   <br />
+==================================
 
 I want to break this line here: |br| this is after the break.
 
- *__init__.py* -- Configuração inicial. |br| *models.py* -- Camada de acesso á dados. |br| *scripts* -- Onde se localizam os scripts de atualização ou manutenção da aplicação. |br| *static*-- Onde ficam os arquivos estáticos. |br| *templates* -- Arquivos de visualização. |br| *tests.py* -- Testes automatizados. |br| *views.py* -- Camada de negócio da aplicação.
+ *__init__.py* -- Configuração inicial. 
+
+ 
+ *models.py* -- Camada de acesso á dados. 
+
+ 
+ *scripts* -- Onde se localizam os scripts de atualização ou manutenção da aplicação. 
+
+ *static*-- Onde ficam os arquivos estáticos. 
+
+ 
+ *templates* -- Arquivos de visualização. 
+
+ 
+ *tests.py* -- Testes automatizados.  
+
+
+ *views.py* -- Camada de negócio da aplicação.
 
 Instalação
 
