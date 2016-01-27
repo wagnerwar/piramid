@@ -6,6 +6,14 @@
 Documentação da aplicação de teste: pyramid!
 ===================================
 
+
+================
+O que é isto?
+================
+
+Este documento visa demonstrar como foi desenvolvida a aplicação aqui denominada PYRAMID. Na verdade, esta é apenas uma aplicação de teste, desenvolvida como treino para o aprendizado do framework Pyramid, utilizando a linguagem de programação PYTHON. Além disso, de maneira simplória, é feita a integração com o SQLAlchemy, que é um framework próprio para interação com base de dados.  
+
+
 ==================================
 Estrutura de arquivos e diretórios
 ==================================
