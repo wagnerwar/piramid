@@ -7,14 +7,14 @@ Documentação da aplicação de teste: pyramid!
 ===================================
 
 
-================
+
 O que é isto?
 ================
 
 Este documento visa demonstrar como foi desenvolvida a aplicação aqui denominada PYRAMID. Na verdade, esta é apenas uma aplicação de teste, desenvolvida como treino para o aprendizado do framework Pyramid, utilizando a linguagem de programação PYTHON. Além disso, de maneira simplória, é feita a integração com o SQLAlchemy, que é um framework próprio para interação com base de dados.  
 
 
-==================================
+
 Estrutura de arquivos e diretórios
 ==================================
 
@@ -39,7 +39,7 @@ Estrutura de arquivos e diretórios
 
  *views.py* -- Camada de negócio da aplicação.
 
-=========
+
 Instalação
 =========
 
@@ -71,7 +71,7 @@ Tal configuração é para ser feito no terminal de uma máquina linux. A máqui
 12. bin/initialize_tutorial_db tutorial/development.ini
 
 
-===============
+
 Modelo de dados
 ===============
 
@@ -121,7 +121,7 @@ O framework SqlAlchemy  permite que, não manipulemos dados diretamente, mas, ob
 não precisa conhecer a estrutura dos dados, apenas, saber usar a camada de abstração destes dados. Os mesmos dados  podem estar no SQLite ou no POSTGRESQL; não importa, a forma de manipulá-los é a mesma. 
 Foi criado um índice chamada my_index associado com a tabela video.
 			
-========
+
 Cadastro
 ========
 
@@ -252,7 +252,7 @@ Arquivo de template: 'templates/consulta.pt' (Trecho relevante)
 Acima, a listagem de vídeos.
 
 
-======
+
 Edição
 ======
 
@@ -321,7 +321,7 @@ Arquivo de template: 'templates/edicao.pt' (Trecho relevante)
 Segue acima, exibição dos campos do video, para atualização.
 
 
-========
+
 Exclusão
 ========
 
@@ -356,7 +356,7 @@ Se existir algum parâmetro 'id' na requisição, o video referenciado é exclui
 o sistema exibe a seguinte mensagem: 'ID INVALIDO'. Se não existir nenhum parâmetro 'id', então, é exibido a seguinte mensagem: "KD O ID?".
 
 
-===================
+
 Rodando a aplicação
 ===================
 
@@ -372,13 +372,13 @@ serving on http://0.0.0.0:6543
 A saída acima indica que a aplicação está acessível na porta 6543. Mas, porta de onde? Da máquina que está hospedando esta aplicação. Caso seja sua máquina local, então, para testar, é só digitar na sua barra de endereço: http://localhost:5432/videos/. 
 
  
-====================
+
 Lidando com templates
 ====================
 
 O framework Pyramid utiliza as seguintes linguagens para template: TAL, METAL e Mako. Estas linguagens podem ser usadas em conjunto. No nosso exemplo, é usada apenas a linguagem TAL, para acessar o valor de algumas variáveis e  realizar iterações em algumas listagens. Linguagem de template é a linguagem utilizada para programar em arquivos estáticos (em formato HTML), por exemplo.  
 
-===========
+
 Referências
 ===========
 
