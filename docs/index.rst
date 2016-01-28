@@ -52,7 +52,7 @@ Tal configuração é para ser feito no terminal de uma máquina linux. A máqui
 
 3.   cd egito
 
-4. bin/activate
+4. bin/activate ou  '. bin/activate'
 
 5. pip install "pyramid==1.6"
 
@@ -113,7 +113,7 @@ Arquivo scripts/initializedb.py
 Se atente para as duas linhas acima, no qual é feita a inserção de um registro para fins de teste.
 
 				
-Sincronização e criação das tabelas
+**Sincronização e criação das tabelas**
     bin/initialize_tutorial_db tutorial/development.ini -- Onde tutorial/development.ini é o arquivo de configuração
 				
 Como visto acima, a classe Video representa a tabela video, com os seguintes atributos: id,name,descricao e preco.
